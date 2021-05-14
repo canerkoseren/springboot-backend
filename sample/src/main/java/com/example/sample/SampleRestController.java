@@ -3,6 +3,8 @@ package com.example.sample;
 import java.util.Arrays;
 import java.util.List;
 
+import com.example.sample.model.SampleEntity;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -26,8 +28,8 @@ public class SampleRestController {
     }
 
     @GetMapping(value = "/list")
-    public ResponseEntity<List<String>> list(){
+    public ResponseEntity<List<SampleEntity>> list(){
 
-        return new ResponseEntity<>(Arrays.asList("OK"), HttpStatus.OK);
+        return new ResponseEntity<>(Arrays.asList(new SampleEntity()), HttpStatus.OK);
     }
 }
